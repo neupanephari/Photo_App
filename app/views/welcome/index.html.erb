@@ -1,5 +1,28 @@
 <% if current_user %>
-<h3>Welcome: <%= current_user.email %></h3>
+<div  style="background-image: url(<%= current_user.images.last.picture.url %>)" class="profile-header text-center">
+  <div class="container-fluid">
+    <div class="container-inner">
+      <%#img class="img-circle media-object" src="../assets/img/avatar-dhg.png"> %>
+      <h3>Welcome: <%= current_user.email %></h3>
+      <p class="profile-header-bio">
+        I wish i was a little bit taller, wish i was a baller.
+      </p>
+    </div>
+  </div>
+    </div>
+  <nav class="profile-header-nav">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a href="#">Photos</a>
+      </li>
+      <li>
+        <a href="#">Others</a>
+      </li>
+      <li>
+        <a href="#">Anothers</a>
+      </li>
+    </ul>
+  </nav>
 <% else %>
 <div class="jumbotron">
   <h2>Welcome to the Photo Management App!</h2>
@@ -45,3 +68,12 @@
   </div>
 </div>
 <% end %>
+
+<script>
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      })
+    </script>
